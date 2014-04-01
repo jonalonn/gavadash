@@ -1,5 +1,7 @@
-var msg = new SpeechSynthesisUtterance("I'm afraid I can't let you do that"); 
-window.speechSynthesis.speak(msg);
+function talkToMe(speak) {
+ 	var msg = new SpeechSynthesisUtterance(speak); 
+	window.speechSynthesis.speak(msg);
+}
 
 var animate = setInterval(function(){drawEye()},20)
 var middle = document.getElementById('second');
@@ -30,7 +32,7 @@ var ctx3 = bottom.getContext('2d');
 
 var imageObj = new Image();
       imageObj.onload = function() {
-      	ctx2.globalAlpha = 0.15
+      	ctx2.globalAlpha = 0.15;
         ctx2.drawImage(imageObj, parseInt(13), parseInt(13), imageObj.width * 0.87, imageObj.height * 0.87);
       };
       imageObj.src = 'img/glare.png';
